@@ -241,12 +241,18 @@ app.post(WEBHOOK_PROCESS_ENDPOINT, (req, res) => {
         externalIdentifier: assessmentData.id,
         status: "completed",
         shouldNotify: true,
-        score: 85,
-        externalLinks: [
+        result: "85%",
+        resultUrl: assessmentData.reportUrl,
+        resultData: [
           {
-            key: "report",
-            label: "Report",
-            url: assessmentData.reportUrl,
+            key: "test_1_score",
+            label: "Test 1 Score",
+            value: '85%',
+          },
+          {
+            key: "test_2_score",
+            label: "Test 2 Score",
+            value: '85%',
           },
         ],
       },
